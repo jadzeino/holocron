@@ -204,6 +204,10 @@ The app follows **WCAG 2.1 AA** guidelines:
 
 ## ⚡ Performance & Optimisation
 
+### Lighthouse Scores
+
+![Lighthouse Scores](public/images/lighthouse-scores.png)
+
 - **React Query caching:** API responses are cached with `staleTime` (5–10 minutes) to avoid redundant network requests. `placeholderData` keeps previous data visible during pagination.
 - **Lazy-loaded related resources:** `RelatedSection` only fetches linked resources when the user expands the section — avoids loading dozens of related items on every detail page.
 - **Debounced search:** 300ms debounce on search input prevents API calls on every keystroke.
