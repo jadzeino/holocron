@@ -5,7 +5,8 @@ let sharedAudio: HTMLAudioElement | null = null;
 
 function getAudio() {
   if (!sharedAudio) {
-    sharedAudio = new Audio("/audio/star-wars-theme.m4a");
+    const base = import.meta.env.BASE_URL;
+    sharedAudio = new Audio(`${base}audio/star-wars-theme.m4a`);
     sharedAudio.loop = true;
     sharedAudio.volume = 0.3;
   }
