@@ -23,7 +23,7 @@ export function Topbar({ searchValue, onSearchChange, showSearch = true, searchP
       <div className="h-4 w-px bg-border" aria-hidden="true" />
 
       {showSearch && (
-        <div className="flex-1 max-w-md">
+        <div className="flex-1 min-w-0">
           <label htmlFor="search-input" className="sr-only">Search resources</label>
           <input
             id="search-input"
@@ -38,7 +38,7 @@ export function Topbar({ searchValue, onSearchChange, showSearch = true, searchP
         </div>
       )}
 
-      <div className="flex-1" />
+      {!showSearch && <div className="flex-1" />}
 
       <button
         onClick={toggleMusic}
