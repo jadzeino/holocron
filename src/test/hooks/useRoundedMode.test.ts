@@ -28,7 +28,7 @@ describe("useRoundedMode", () => {
     expect(result.current.isRounded).toBe(true);
     act(() => result.current.toggle());
     expect(result.current.isRounded).toBe(false);
-    expect(document.documentElement.style.getPropertyValue("--radius")).toBe("2px");
+    expect(document.documentElement.style.getPropertyValue("--radius")).toBe("0.125rem");
   });
 
   it("persists to localStorage", () => {

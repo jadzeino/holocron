@@ -38,7 +38,7 @@ I chose **Vite** as the build tool for several reasons:
 
 ### Why shadcn/ui?
 
-- **Copy-paste components:** shadcn/ui provides unstyled, accessible component primitives (Sidebar, Tooltip, etc.) that I own and can customise. No black-box dependencies.
+- **Native components:** shadcn/ui provides unstyled, accessible component primitives (Sidebar, Tooltip, etc.) that I own and can customise. No black-box dependencies.
 - **Radix UI primitives underneath:** Built on battle-tested accessible primitives from Radix, giving me proper ARIA support, keyboard navigation, and focus management for free.
 - **Tailwind-native:** Components are styled with Tailwind classes, keeping everything in one styling paradigm.
 
@@ -107,6 +107,8 @@ src/
 ├── App.tsx              # Root component with routing and providers
 └── index.css            # Design tokens, custom CSS, animations
 e2e/                     # Playwright E2E test specs
+├── mocks/
+│   └── swapi-data.ts    # Mocked API Data 
 ├── home.spec.ts
 ├── navigation.spec.ts
 ├── pagination.spec.ts
@@ -161,7 +163,7 @@ The display font used is **Orbitron** — not the classic "Star Wars" font (whic
 
 ### UX Features
 - **Dark/Light theme toggle** — persisted in `localStorage`
-- **Rounded/Sharp corners toggle** — switches `--radius` CSS variable between `2px` and `0.75rem`, persisted in `localStorage`
+- **Rounded/Sharp corners toggle** — switches `--radius` CSS variable between `0.125rem` and `0.75rem`, persisted in `localStorage`
 - **Background music** — The app features an ambient background music player with play/stop controls in the top bar. The track is **not** the official Star Wars main theme — it's a fan-made piece inspired by the Star Wars universe. I chose a fan creation to avoid any licensing concerns while still delivering the immersive sci-fi atmosphere. The audio is managed via a singleton `Audio` instance that persists across page navigations, so the music doesn't restart when browsing between sectors.
 - **Smooth page transitions** — Framer Motion animations on route changes and list item renders
 - **Collapsible sidebar** — Icon-only mode for more content space
@@ -309,7 +311,7 @@ To enable it:
 | `npm test` | Run unit tests |
 | `npm run test:watch` | Run unit tests in watch mode |
 | `npm run lint` | Run ESLint |
-| `npx playwright test` | Run E2E tests |
+| `npm run test:e2e` | Run E2E tests
 
 ---
 

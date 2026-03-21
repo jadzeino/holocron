@@ -13,7 +13,7 @@ export function useRoundedMode() {
       root.style.setProperty("--radius", "0.75rem");
     } else {
       root.classList.remove("rounded-mode");
-      root.style.setProperty("--radius", "2px");
+      root.style.setProperty("--radius", "0.125rem");
     }
     localStorage.setItem("holocron-rounded", isRounded ? "on" : "off");
   }, [isRounded]);
